@@ -1,7 +1,7 @@
 title: GrowPoder
 description: Learn how to grow and earn money with faceless content, YouTube Shorts, and AI tools.
 baseurl: ""
-url: "https://ditu87.github.io/growpoder" # Replace with your GitHub username
+url: "https://ditu87.github.io/GrowPoder/" # Replace with your GitHub username
 theme: minima
 plugins:
   - jekyll-feed

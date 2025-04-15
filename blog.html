@@ -4,7 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Blog - GrowPoder</title>
-    <link rel="stylesheet" href="assets/style.css">
+    <link rel="stylesheet" href="/assets/css/style.css"> <!-- Fixed path to match your project structure -->
     <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&display=swap" rel="stylesheet">
 </head>
 <body>
@@ -21,24 +21,13 @@
     <main>
         <section class="blog-list container">
             <h1>Latest Articles</h1>
-            
-            <article class="blog-card">
-                <h2><a href="_posts/2025-04-14-grow-faceless-channel.md">How to Start a Faceless YouTube Channel</a></h2>
-                <p class="blog-date">April 14, 2025</p>
-                <p>Faceless content is blowing up! Here's how to start one using AI tools and YouTube Shorts.</p>
-            </article>
-
-            <article class="blog-card">
-                <h2><a href="#">Mastering YouTube Shorts in 2025</a></h2>
-                <p class="blog-date">April 10, 2025</p>
-                <p>Learn the secrets to creating viral YouTube Shorts and growing your audience.</p>
-            </article>
-
-            <article class="blog-card">
-                <h2><a href="#">AI Tools for Content Creation</a></h2>
-                <p class="blog-date">April 5, 2025</p>
-                <p>Discover the best AI tools to streamline your content creation process.</p>
-            </article>
+            {% for post in site.posts %}
+                <article class="blog-card">
+                    <h2><a href="{{ post.url }}">{{ post.title }}</a></h2>
+                    <p class="blog-date">{{ post.date | date: "%B %d, %Y" }}</p>
+                    <p>{{ post.content | strip_html | truncate: 100 }}</p>
+                </article>
+            {% endfor %}
         </section>
     </main>
 
@@ -49,8 +38,8 @@
                 <a href="#">Privacy Policy</a>
                 <a href="#">Contact</a>
             </div>
-            <p>&copy; 2025 GrowPoder. All rights reserved.</p>
+            <p>© 2025 GrowPoder. All rights reserved.</p>
         </div>
     </footer>
 </body>
-</html> 
+</html>
